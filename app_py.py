@@ -57,3 +57,6 @@ input_encoded=pd.get_dummies(input_df)
 if st.button("Predict Maintenance Cost"):
   prediction=model.predict(input_encoded)
   st.success(f"Predicted Maintenance Cost: Rs.{prediction:,.2f}")
+
+# Rename the file if needed
+!mv "model (1).pkl" model.pkl
