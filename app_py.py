@@ -15,7 +15,7 @@ import streamlit as st
 import joblib
 import pandas as pd
 
-model=joblib.load("model (1).pkl")
+model=joblib.load("model.pkl")
 
 #title
 st.title("Machine Maintenance Cost Prediction")
@@ -58,5 +58,3 @@ if st.button("Predict Maintenance Cost"):
   prediction=model.predict(input_encoded)
   st.success(f"Predicted Maintenance Cost: Rs.{prediction:,.2f}")
 
-# Rename the file if needed
-!mv "model (1).pkl" model.pkl
