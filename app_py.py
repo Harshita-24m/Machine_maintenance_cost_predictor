@@ -15,7 +15,7 @@ import streamlit as st
 import joblib
 import pandas as pd
 
-model=joblib.load("/content/model (1).pkl")
+model=joblib.load("model (1).pkl")
 
 #title
 st.title("Machine Maintenance Cost Prediction")
