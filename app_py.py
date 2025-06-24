@@ -15,7 +15,7 @@ import streamlit as st
 import joblib
 import pandas as pd
 
-model=joblib.load("model.pkl")
+model,expected_features=joblib.load("model.pkl")
 
 #title
 st.title("Machine Maintenance Cost Prediction")
@@ -51,7 +51,7 @@ def user_input():
 
 input_df=user_input()
 
-input_encoded=pd.get_dummies(input_df)
+input_encoded= input_df.reindex(columns=expected_features, fill_value=0)
 
 #Predict
 if st.button("Predict Maintenance Cost"):
