@@ -53,12 +53,8 @@ input_df=user_input()
 
 input_encoded= pd.get_dummies(input_df)
 
-# Ensure it has all expected features (fill missing ones with 0)
-for col in expected_features:
-    if col not in input_encoded.columns:
-        input_encoded[col] = 0
-input_encoded = input_encoded[expected_features]
-
+# Match features exactly
+input_encoded = input_encoded.reindex(columns=expected_features, fill_value=0)
 #Predict
 if st.button("Predict Maintenance Cost"):
   prediction=model.predict(input_encoded)
