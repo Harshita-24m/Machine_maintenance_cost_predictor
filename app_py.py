@@ -56,9 +56,9 @@ input_encoded= pd.get_dummies(input_df)
 # Match features exactly
 input_encoded = input_encoded.reindex(columns=expected_features, fill_value=0)
 # Debug: See what the input looks like
-st.write("Expected Features:", expected_features)
-st.write("Input Features:", input_encoded.columns.tolist())
-st.write("Shape of input_encoded:", input_encoded.shape)
+# st.write("Expected Features:", expected_features)
+# st.write("Input Features:", input_encoded.columns.tolist())
+# st.write("Shape of input_encoded:", input_encoded.shape)
 if st.button("Predict Maintenance Cost"):
   prediction=model.predict(input_encoded)
   st.success(f"Predicted Maintenance Cost: Rs.{prediction[0]:,.2f}")
