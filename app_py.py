@@ -55,7 +55,7 @@ input_encoded= pd.get_dummies(input_df)
 
 # Ensure it has all expected features (fill missing ones with 0)
 for col in expected_features:
-    if col not in input_encoded:
+    if col not in input_encoded.columns:
         input_encoded[col] = 0
 input_encoded = input_encoded[expected_features]
 
