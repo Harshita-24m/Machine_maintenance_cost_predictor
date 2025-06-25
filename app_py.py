@@ -55,7 +55,6 @@ input_encoded= pd.get_dummies(input_df)
 
 # Match features exactly
 input_encoded = input_encoded.reindex(columns=expected_features, fill_value=0)
-
 # Debug: See what the input looks like
 st.write("Expected Features:", expected_features)
 st.write("Input Features:", input_encoded.columns.tolist())
